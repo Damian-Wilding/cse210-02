@@ -26,7 +26,9 @@ namespace Hilo
 
         public void GetInputs()
         {
-
+            Console.Write("Higher or Lower? [h/l] ");
+            string highlow = Console.ReadLine();
+            
         }
 
 
