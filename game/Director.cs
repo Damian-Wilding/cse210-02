@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Unit02.Game
+namespace Hilo
 {
     /// <summary>
     /// A person who directs the game. 
