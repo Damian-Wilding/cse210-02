@@ -19,6 +19,7 @@ namespace Hilo
 
         public void StartGame()
         {
+            Console.WriteLine("Welcome to the card game!");
             
         }
 
