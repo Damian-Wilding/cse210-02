@@ -13,6 +13,8 @@ namespace Hilo
     {
         List<Dealer> cards = new List<Dealer>();
         bool isPlaying = true;
+        int score = 0;
+        int totalScore = 0;
         public Director()
         {
            
@@ -59,7 +61,7 @@ namespace Hilo
                 values += $"{card.value} ";
             }
 
-            Console.WriteLine($"The card is: {card}");
+            Console.WriteLine($"The card is: {values}");
             Console.WriteLine($"Your score is: {totalScore}\n");
             isPlaying = (score > 0);
         }
