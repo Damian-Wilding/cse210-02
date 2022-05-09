@@ -11,7 +11,8 @@ namespace Hilo
     /// </summary>
     public class Director
     {
-
+        List<Dealer> cards = new List<Dealer>();
+        bool isPlaying = true;
         public Director()
         {
            
@@ -37,7 +38,20 @@ namespace Hilo
 
         public void DoOutputs()
         {
+            if (!isPlaying)
+            {
+                return;
+            }
 
+            string values = "";
+            foreach (Dealer card in cards)
+            {
+                values += $"{card.value} ";
+            }
+
+            Console.WriteLine($"The card is: {card}");
+            Console.WriteLine($"Your score is: {totalScore}\n");
+            isPlaying = (score > 0);
         }
     }
 }
