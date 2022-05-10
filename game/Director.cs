@@ -44,7 +44,18 @@ namespace Hilo
 
         public void DoUpdates()
         {
+            if(!isPlaying)
+            {
+                return;
+            }
 
+            score = 0;
+            foreach (Dealer card in cards)
+            {
+                card.Draw();
+                score += card.points;
+            }
+            totalScore += score;
         }
 
 
