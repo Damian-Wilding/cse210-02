@@ -13,6 +13,8 @@ namespace Hilo
     {
         List<Dealer> cards = new List<Dealer>();
         bool isPlaying = true;
+        int score = 0;
+        int totalScore = 0;
         public Director()
         {
            
@@ -20,6 +22,7 @@ namespace Hilo
 
         public void StartGame()
         {
+            // gets the game started and runs each turn if the game is still going.
             Console.WriteLine("Welcome to the card game!");
             while (isPlaying)
             {
@@ -32,7 +35,10 @@ namespace Hilo
 
         public void GetInputs()
         {
-
+            // gets input from the user (asks them if they want to guess higher or lower.)
+            Console.Write("Higher or Lower? [h/l] ");
+            string highlow = Console.ReadLine();
+            
         }
 
 
@@ -55,7 +61,7 @@ namespace Hilo
                 values += $"{card.value} ";
             }
 
-            Console.WriteLine($"The card is: {card}");
+            Console.WriteLine($"The card is: {values}");
             Console.WriteLine($"Your score is: {totalScore}\n");
             isPlaying = (score > 0);
         }
