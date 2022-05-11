@@ -19,7 +19,11 @@ namespace Hilo
         {
             StartGame();
             // need something here to generate the first card.
-            
+            while (isPlaying == true) {
+                GetInputs();
+            }
+            DoUpdates();
+            DoOutputs();
         }
 
         public void StartGame()
