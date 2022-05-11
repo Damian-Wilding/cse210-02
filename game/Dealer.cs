@@ -21,7 +21,7 @@ namespace Hilo
         /// <summary>
         // 
         /// </summary>
-        public void Roll()
+        public void Draw()
         {
         
         }

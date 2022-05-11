@@ -17,7 +17,7 @@ namespace Hilo
         int totalScore = 0;
         public Director()
         {
-           
+           Dealer card = new Dealer();
         }
 
         public void StartGame()
