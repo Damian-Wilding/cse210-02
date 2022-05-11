@@ -30,6 +30,9 @@ namespace Hilo
         {
             // gets the game started and runs each turn if the game is still going.
             Console.WriteLine("Welcome to the card game!");
+                Dealer firstCard = new Dealer();
+                int card1 = firstCard();
+                Console.WriteLine($"The first card is {card1}");
                 GetInputs();
                 DoUpdates();
                 DoOutputs();
