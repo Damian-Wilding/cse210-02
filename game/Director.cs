@@ -78,8 +78,8 @@ namespace Hilo
             Console.WriteLine($"The card is: {values}");
             Console.WriteLine($"Your score is: {totalScore}\n");
             Console.WriteLine($"Would you like to play again? (y/n)");
-            
-            isPlaying = (score > 0) && ;
+            string Continue = Console.ReadLine();
+            isPlaying = (score > 0) && Continue == "y";
         }
     }
 }
