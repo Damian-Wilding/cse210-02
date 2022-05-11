@@ -17,13 +17,16 @@ namespace Hilo
         int totalScore = 0;
         public Director()
         {
-           Dealer card = new Dealer();
+            StartGame();
+            // need something here to generate the first card.
+            
         }
 
         public void StartGame()
         {
             // gets the game started and runs each turn if the game is still going.
             Console.WriteLine("Welcome to the card game!");
+
             while (isPlaying)
             {
                 GetInputs();
