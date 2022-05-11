@@ -16,6 +16,8 @@ namespace Hilo
         bool isPlaying = true;
         int score = 0;
         int totalScore = 0;
+        string Continue = "y";
+
         public Director()
         {
                 //This whole method should be blank
@@ -26,12 +28,13 @@ namespace Hilo
         {
             // gets the game started and runs each turn if the game is still going.
             Console.WriteLine("Welcome to the card game!");
-            while (isPlaying == true) {
-                int card = Draw();
+            while (isPlaying == true && Continue == "y") {
+                int card = dealer.Draw();
+                Console.WriteLine($"The card is {card}");
                 GetInputs();
                 DoUpdates();
                 DoOutputs();
-                Console.WriteLine($"The card is {card}");
+                
             
             }
         }
@@ -51,35 +54,35 @@ namespace Hilo
             {
                 return;
             }
-
             score = 0;
-            foreach (Dealer card in cards)
-            {
-                card.Draw();
-                score += card.points;
-            }
+            int OldCard = card;
+            int card = dealer.Draw();
+            int points = dealer.CompareCards(OldCard, card, highlow);
+            score += points;
             totalScore += score;
         }
 
 
         public void DoOutputs()
         {
-            if (!isPlaying)
-            {
-                return;
-            }
+            //I don't think the following lines are needed. -Damian
+            
+            //if (!isPlaying)
+            //{
+            //    return;
+            //}
+            //string values = "";
+            //foreach (Dealer card in cards)
+            //{
+            //    values += $"{card.value} ";
+            //}
 
-            string values = "";
-            foreach (Dealer card in cards)
-            {
-                values += $"{card.value} ";
-            }
-
-            Console.WriteLine($"The card is: {values}");
+            Console.WriteLine($"The card is: {card}");
             Console.WriteLine($"Your score is: {totalScore}\n");
             Console.WriteLine($"Would you like to play again? (y/n)");
             string Continue = Console.ReadLine();
-            isPlaying = (score > 0) && Continue == "y";
+            isPlaying = (totalScore > 0);
+
         }
     }
 }
