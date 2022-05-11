@@ -23,10 +23,12 @@ namespace Hilo
         /// <summary>
         // 
         /// </summary>
-        public void Draw()
+        public int Draw()
         {
             Random random = new Random();
             value = random.Next(1, 14);
+
+            return value;
         }
 
         public int CompareCards(int previousCard, int currentCard, string playerChoice)
