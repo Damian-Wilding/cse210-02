@@ -11,32 +11,29 @@ namespace Hilo
     /// </summary>
     public class Director
     {
-        List<Dealer> cards = new List<Dealer>();
+        //List<Dealer> cards = new List<Dealer>();
+        Dealer dealer = new Dealer();
         bool isPlaying = true;
         int score = 0;
         int totalScore = 0;
         public Director()
         {
-            StartGame();
-            // need something here to generate the first card.
-            while (isPlaying == true) {
-                GetInputs();
-                DoUpdates();
-                DoOutputs();
-            }
+                //This whole method should be blank
         }
+        
 
         public void StartGame()
         {
             // gets the game started and runs each turn if the game is still going.
             Console.WriteLine("Welcome to the card game!");
-                Dealer firstCard = new Dealer();
-                int card1 = firstCard();
-                Console.WriteLine($"The first card is {card1}");
+            while (isPlaying == true) {
+                int card = Draw();
                 GetInputs();
                 DoUpdates();
                 DoOutputs();
+                Console.WriteLine($"The card is {card}");
             
+            }
         }
 
         public void GetInputs()
