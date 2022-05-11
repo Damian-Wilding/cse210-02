@@ -21,22 +21,17 @@ namespace Hilo
             // need something here to generate the first card.
             while (isPlaying == true) {
                 GetInputs();
+                DoUpdates();
+                DoOutputs();
             }
-            DoUpdates();
-            DoOutputs();
-        }
 
         public void StartGame()
         {
             // gets the game started and runs each turn if the game is still going.
             Console.WriteLine("Welcome to the card game!");
-
-            while (isPlaying)
-            {
                 GetInputs();
                 DoUpdates();
                 DoOutputs();
-            }
             
         }
 
