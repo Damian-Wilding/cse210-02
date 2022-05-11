@@ -24,7 +24,8 @@ namespace Hilo
                 DoUpdates();
                 DoOutputs();
             }
-
+        }
+        
         public void StartGame()
         {
             // gets the game started and runs each turn if the game is still going.
