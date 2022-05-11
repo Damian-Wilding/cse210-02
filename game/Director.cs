@@ -28,15 +28,14 @@ namespace Hilo
         {
             // gets the game started and runs each turn if the game is still going.
             Console.WriteLine("Welcome to the card game!");
+            int card = dealer.Draw();
             while (isPlaying == true && Continue == "y") {
-                int card = dealer.Draw();
                 Console.WriteLine($"The card is {card}");
                 GetInputs();
                 DoUpdates();
                 DoOutputs();
-                
-            
             }
+            Console.WriteLine("You are done, the game is over.");
         }
 
         public void GetInputs()
