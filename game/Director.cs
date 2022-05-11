@@ -25,7 +25,7 @@ namespace Hilo
                 DoOutputs();
             }
         }
-        
+
         public void StartGame()
         {
             // gets the game started and runs each turn if the game is still going.
@@ -77,7 +77,9 @@ namespace Hilo
 
             Console.WriteLine($"The card is: {values}");
             Console.WriteLine($"Your score is: {totalScore}\n");
-            isPlaying = (score > 0);
+            Console.WriteLine($"Would you like to play again? (y/n)");
+            
+            isPlaying = (score > 0) && ;
         }
     }
 }
