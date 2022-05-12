@@ -17,6 +17,7 @@ namespace Hilo
         int score = 0;
         int totalScore = 0;
         string Continue = "y";
+        
 
         public Director()
         {
@@ -64,23 +65,14 @@ namespace Hilo
 
         public void DoOutputs()
         {
-            //I don't think the following lines are needed. -Damian
-            
-            //if (!isPlaying)
-            //{
-            //    return;
-            //}
-            //string values = "";
-            //foreach (Dealer card in cards)
-            //{
-            //    values += $"{card.value} ";
-            //}
 
-            Console.WriteLine($"The card is: {card}");
-            Console.WriteLine($"Your score is: {totalScore}\n");
+
+            Console.WriteLine($"The next card was: {card}");
+            Console.WriteLine($"Your score is: {totalScore}");
             Console.WriteLine($"Would you like to play again? (y/n)");
             string Continue = Console.ReadLine();
             isPlaying = (totalScore > 0);
+
 
         }
     }
