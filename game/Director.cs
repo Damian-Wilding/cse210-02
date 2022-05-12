@@ -65,9 +65,9 @@ namespace Hilo
 
         public void DoOutputs()
         {
+            Console.WriteLine($"The card is : {previousCard}");
 
-
-            Console.WriteLine($"The next card was: {card}");
+            Console.WriteLine($"The next card was: {currentCard}");
             Console.WriteLine($"Your score is: {totalScore}");
             Console.WriteLine($"Would you like to play again? (y/n)");
             string Continue = Console.ReadLine();
