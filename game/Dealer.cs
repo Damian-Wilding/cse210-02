@@ -12,7 +12,7 @@ namespace Hilo
 
         int value = 0;
         
-        int points = 0;
+        //int points = 0;
         /// <summary>
         // I don't think anything goes here
         /// </summary>
@@ -34,25 +34,27 @@ namespace Hilo
         public int CompareCards(int previousCard, int currentCard, string playerChoice)
         {
 
-            if (currentCard > previousCard && playerChoice == "h")
-            {
-                points = 100;
+            if (currentCard > previousCard )
+            {   
+                if (playerChoice == "h")
+                {
+                    return 100;
+                }
+                else {
+                    return -75;
+                }
             }
-            else if (currentCard > previousCard && playerChoice == "l")
-            {
-                points = -75;
-            }
+            
 
-            if (currentCard < previousCard && playerChoice == "h")
+            else 
             {
-                points = -75;
+                if (playerChoice == "h") {
+                    return -75;
+                }
+                else {
+                    return 100;
+                }
             }
-            else if (currentCard < previousCard && playerChoice == "l")
-            {
-                points = 100;
-            }
-
-            return points;
 
         }
 
