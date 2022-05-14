@@ -41,7 +41,7 @@ namespace Hilo
             {
                 Console.WriteLine($"The card is {card}");
                 GetInputs();
-                DoUpdates(card, highlow);
+                DoUpdates(card, highlow, dealer);
                 DoOutputs(previousCard, currentCard);
             }
             Console.WriteLine("You are done, the game is over.");
@@ -58,7 +58,7 @@ namespace Hilo
         }
 
 
-        public void DoUpdates(int card, string highlow)
+        public void DoUpdates(int card, string highlow, Dealer dealer)
         {
             if(!isPlaying)
             {
@@ -66,8 +66,8 @@ namespace Hilo
             }
             score = 0;
             int previousCard = card;
-            card = dealer.Draw();
-            int currentCard = card;
+            int newCard = dealer.Draw();
+            card = newCard;
             int points = dealer.CompareCards(previousCard, card, highlow);
             score += points;
             totalScore += score;
