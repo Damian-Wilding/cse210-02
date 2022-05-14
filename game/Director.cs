@@ -17,7 +17,14 @@ namespace Hilo
         int score = 0;
         int totalScore = 0;
         string Continue = "y";
+
+        string highlow;
+
+        int previousCard;
+        int card;
         
+        int currentCard;
+
 
         public Director()
         {
@@ -30,40 +37,44 @@ namespace Hilo
             // gets the game started and runs each turn if the game is still going.
             Console.WriteLine("Welcome to the card game!");
             int card = dealer.Draw();
-            while (isPlaying == true && Continue == "y") {
+            while (isPlaying == true && Continue == "y") 
+            {
                 Console.WriteLine($"The card is {card}");
                 GetInputs();
-                DoUpdates();
-                DoOutputs();
+                DoUpdates(card, highlow);
+                DoOutputs(previousCard, currentCard);
             }
             Console.WriteLine("You are done, the game is over.");
         }
 
-        public void GetInputs()
+        public string GetInputs()
         {
             // gets input from the user (asks them if they want to guess higher or lower.)
             Console.Write("Higher or Lower? [h/l] ");
             string highlow = Console.ReadLine();
+
+            return highlow;
             
         }
 
 
-        public void DoUpdates()
+        public void DoUpdates(int card, string highlow)
         {
             if(!isPlaying)
             {
                 return;
             }
             score = 0;
-            int OldCard = card;
-            int card = dealer.Draw();
-            int points = dealer.CompareCards(OldCard, card, highlow);
+            int previousCard = card;
+            card = dealer.Draw();
+            int currentCard = card;
+            int points = dealer.CompareCards(previousCard, card, highlow);
             score += points;
             totalScore += score;
         }
 
 
-        public void DoOutputs()
+        public void DoOutputs(int previousCard, int currentCard)
         {
             Console.WriteLine($"The card is : {previousCard}");
 
